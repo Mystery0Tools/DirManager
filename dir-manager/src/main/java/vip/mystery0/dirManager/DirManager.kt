@@ -77,22 +77,71 @@ open class DirManager : FrameLayout {
 		updateList()
 	}
 
+	/**
+	 * 设置自定义的适配器
+	 */
 	fun <T : RecyclerView.ViewHolder> setAdapter(adapter: BaseDirAdapter<T>) {
 		baseDirAdapter = adapter
 	}
 
-	fun setRootPath(rootPath: File) {
-		setRootPath(rootPath.absolutePath)
+	/**
+	 * 设置根目录
+	 * @param rootPath String 设置的根目录的绝对路径
+	 *
+	 * @return Boolean 设置结果
+	 */
+	fun setRootPath(rootPath: String): Boolean {
+		return setRootPath(File(rootPath))
 	}
 
-	fun setRootPath(rootPath: String) {
-		this.rootPath = rootPath
+	/**
+	 * 设置根目录
+	 * @param rootPath File 设置的根目录的File对象
+	 *
+	 * @return Boolean 设置结果
+	 */
+	fun setRootPath(rootPath: File): Boolean {
+		return if (rootPath.exists()) {
+			this.rootPath = rootPath.absolutePath
+			true
+		} else
+			false
 	}
 
+	/**
+	 * 获取根目录的路径
+	 */
 	fun getRootPath(): String {
 		return rootPath
 	}
 
+	/**
+	 * 设置当前选中的路径
+	 * @param path String 设置的绝对路径
+	 *
+	 * @return Boolean 设置结果
+	 */
+	fun setCurrentPath(path: String): Boolean {
+		return setCurrentPath(File(path))
+	}
+
+	/**
+	 * 设置当前选中的路径
+	 * @param path File 路径的File对象
+	 *
+	 * @return Boolean 设置结果
+	 */
+	fun setCurrentPath(path: File): Boolean {
+		return if (path.exists()) {
+			currentPath = path
+			true
+		} else
+			false
+	}
+
+	/**
+	 * 获取当前选中的路径
+	 */
 	fun getCurrentPath(): String {
 		return currentPath.absolutePath
 	}
