@@ -1,4 +1,4 @@
-package vip.mystery0.simple_dirmanager;
+package vip.mystery0.simpledirmanager;
 
 import org.junit.Test;
 

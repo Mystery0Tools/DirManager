@@ -44,7 +44,7 @@ abstract class BaseDirAdapter<T : RecyclerView.ViewHolder>(open val list: ArrayL
 	abstract fun initViewHolder(holder: T, position: Int)
 
 	fun setTextViewText(file: File, textView: TextView) {
-		if (file.absolutePath == currentFile.parentFile.absolutePath)
+		if (file.absolutePath == currentFile.parentFile.absolutePath || file.absolutePath == rootPath)
 			textView.text = ".."
 		else
 			textView.text = file.name

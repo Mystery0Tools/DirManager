@@ -82,6 +82,8 @@ open class DirManager : FrameLayout {
 	 */
 	fun <T : RecyclerView.ViewHolder> setAdapter(adapter: BaseDirAdapter<T>) {
 		baseDirAdapter = adapter
+		baseDirAdapter.setRootPath(rootPath)
+		baseDirAdapter.currentFile = currentPath
 	}
 
 	/**
@@ -103,6 +105,7 @@ open class DirManager : FrameLayout {
 	fun setRootPath(rootPath: File): Boolean {
 		return if (rootPath.exists()) {
 			this.rootPath = rootPath.absolutePath
+			baseDirAdapter.setRootPath(rootPath.absolutePath)
 			true
 		} else
 			false
@@ -134,6 +137,7 @@ open class DirManager : FrameLayout {
 	fun setCurrentPath(path: File): Boolean {
 		return if (path.exists()) {
 			currentPath = path
+			baseDirAdapter.currentFile = path
 			true
 		} else
 			false

@@ -1,4 +1,4 @@
-package vip.mystery0.simple_dirmanager;
+package vip.mystery0.simpledirmanager;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
