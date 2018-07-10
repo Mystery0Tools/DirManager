@@ -17,7 +17,7 @@
 
 package vip.mystery0.dirManager
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.widget.TextView
 import java.io.File
 

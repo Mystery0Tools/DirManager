@@ -19,8 +19,8 @@ package vip.mystery0.dirManager
 
 import android.content.Context
 import android.os.Environment
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.util.AttributeSet
 import android.util.Log
 import android.view.LayoutInflater
@@ -34,7 +34,7 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import java.io.File
 
-open class DirManager : FrameLayout {
+class DirManager : FrameLayout {
 	companion object {
 		private const val TAG = "DirManager"
 	}
@@ -89,7 +89,6 @@ open class DirManager : FrameLayout {
 	/**
 	 * 设置根目录
 	 * @param rootPath String 设置的根目录的绝对路径
-	 *
 	 * @return Boolean 设置结果
 	 */
 	fun setRootPath(rootPath: String): Boolean {
@@ -99,7 +98,6 @@ open class DirManager : FrameLayout {
 	/**
 	 * 设置根目录
 	 * @param rootPath File 设置的根目录的File对象
-	 *
 	 * @return Boolean 设置结果
 	 */
 	fun setRootPath(rootPath: File): Boolean {
@@ -131,7 +129,6 @@ open class DirManager : FrameLayout {
 	/**
 	 * 设置当前选中的路径
 	 * @param path File 路径的File对象
-	 *
 	 * @return Boolean 设置结果
 	 */
 	fun setCurrentPath(path: File): Boolean {
