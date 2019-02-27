@@ -26,8 +26,6 @@ android {
 		targetSdkVersion 28
 		versionCode 1
 		versionName POM_VERSION
-
-		vectorDrawables.useSupportLibrary = true
 	}
 }
 
